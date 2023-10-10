@@ -1,0 +1,39 @@
+
+<%- include("partials/header.ejs") %>
+
+    <h1>Work</h1>
+
+    <div class="container">
+      <table>
+      <% 
+    // console.log("abc
+    for(i=0;i<workArray.length;i++){%>
+      
+      <tr>
+      <td width="20%">
+        <input type="checkbox" class="checkBox" id="_<%=i%>"></td>
+      <td width="80%">
+        <label class="_<%=i%>" ><%=workArray[i]%></label></td>
+      </tr>
+
+        
+        <%}%>
+      <tr>
+        <td colspan="2">
+        <form action="/submitWork" value="today" method="POST">
+          <input type="text" class="input" name="workTask" required/>
+          <input type="submit" class="btn" value="+" />
+          </form></td>
+
+      </tr>
+      </table>
+        
+
+        
+          </div>
+          
+          <script src="checkBox.js"></script>
+          </body>
+          </html>
+          
+          <%- include("partials/footer.ejs") %>

@@ -1,0 +1,44 @@
+
+<%- include("partials/header.ejs") %>
+    
+    <% const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday",
+    "Friday", "Saturday"]; const months = ["January", "February", "March",
+    "April", "May", "June", "July", "August", "September", "October",
+    "November", "December"]; const dayString=days[new Date().getDay()]+' , '+
+    months[new Date().getMonth()]+' '+new Date().getDate(); %>
+    <h1><%= dayString %></h1>
+
+    <div class="container">
+      <table>
+      <% 
+    // console.log("abc
+    for(i=0;i<itemArray.length;i++){%>
+      
+      <tr>
+      <td width="20%">
+        <input type="checkbox" class="checkBox" id="_<%=i%>"></td>
+      <td width="80%">
+        <label class="_<%=i%>" ><%=itemArray[i]%></label></td>
+      </tr>
+
+        
+        <%}%>
+      <tr>
+        <td colspan="2">
+        <form action="/submit" value="today" method="POST">
+          <input type="text" class="input" name="newTask" required/>
+          <input type="submit" class="btn" value="+" />
+          </form></td>
+
+      </tr>
+      </table>
+        
+
+        
+          </div>
+          
+          <script src="checkBox.js"></script>
+          </body>
+          </html>
+          <%- include("partials/footer.ejs") %>
+          
